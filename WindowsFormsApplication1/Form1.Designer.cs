@@ -29,123 +29,123 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnRight = new System.Windows.Forms.Button();
+            this.btnLeft = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.labelAdress = new System.Windows.Forms.Label();
+            this.labelXbox = new System.Windows.Forms.Label();
+            this.btnDisconnect = new System.Windows.Forms.Button();
+            this.labelConnected = new System.Windows.Forms.Label();
+            this.listBoxCommands = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // button1
+            // btnForward
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(79, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "^";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
+            this.btnForward.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForward.Location = new System.Drawing.Point(95, 88);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(50, 50);
+            this.btnForward.TabIndex = 0;
+            this.btnForward.Text = "^";
+            this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnForward_MouseDown);
             // 
-            // button2
+            // btnRight
             // 
-            this.button2.Location = new System.Drawing.Point(127, 101);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown);
+            this.btnRight.Location = new System.Drawing.Point(143, 144);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Size = new System.Drawing.Size(50, 50);
+            this.btnRight.TabIndex = 1;
+            this.btnRight.Text = ">";
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRight_MouseDown);
             // 
-            // button3
+            // btnLeft
             // 
-            this.button3.Location = new System.Drawing.Point(29, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button3_MouseDown);
+            this.btnLeft.Location = new System.Drawing.Point(45, 144);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.Size = new System.Drawing.Size(50, 50);
+            this.btnLeft.TabIndex = 2;
+            this.btnLeft.Text = "<";
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnLeft_MouseDown);
             // 
-            // button4
+            // btnBack
             // 
-            this.button4.Location = new System.Drawing.Point(79, 157);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "\\/";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button4_MouseDown);
+            this.btnBack.Location = new System.Drawing.Point(95, 200);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 50);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "\\/";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
             // 
-            // button5
+            // btnConnect
             // 
-            this.button5.Location = new System.Drawing.Point(231, 328);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Connect";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnConnect.Location = new System.Drawing.Point(231, 328);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect.TabIndex = 4;
+            this.btnConnect.Text = "Connect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // textBox1
+            // textBoxAddress
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 328);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "ws://127.0.0.1:50007";
+            this.textBoxAddress.Location = new System.Drawing.Point(60, 328);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(165, 20);
+            this.textBoxAddress.TabIndex = 5;
+            this.textBoxAddress.Text = "ws://127.0.0.1:50007";
             // 
-            // label1
+            // labelAdress
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 331);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Address";
+            this.labelAdress.AutoSize = true;
+            this.labelAdress.Location = new System.Drawing.Point(9, 331);
+            this.labelAdress.Name = "labelAdress";
+            this.labelAdress.Size = new System.Drawing.Size(45, 13);
+            this.labelAdress.TabIndex = 6;
+            this.labelAdress.Text = "Address";
             // 
-            // label2
+            // labelXbox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Controller not connected";
+            this.labelXbox.AutoSize = true;
+            this.labelXbox.Location = new System.Drawing.Point(228, 29);
+            this.labelXbox.Name = "labelXbox";
+            this.labelXbox.Size = new System.Drawing.Size(123, 13);
+            this.labelXbox.TabIndex = 7;
+            this.labelXbox.Text = "Controller not connected";
             // 
-            // button6
+            // btnDisconnect
             // 
-            this.button6.Location = new System.Drawing.Point(312, 328);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Disconnect";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnDisconnect.Location = new System.Drawing.Point(312, 328);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(75, 23);
+            this.btnDisconnect.TabIndex = 8;
+            this.btnDisconnect.Text = "Disconnect";
+            this.btnDisconnect.UseVisualStyleBackColor = true;
+            this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
-            // label3
+            // labelConnected
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 312);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Not Connected";
+            this.labelConnected.AutoSize = true;
+            this.labelConnected.Location = new System.Drawing.Point(57, 312);
+            this.labelConnected.Name = "labelConnected";
+            this.labelConnected.Size = new System.Drawing.Size(79, 13);
+            this.labelConnected.TabIndex = 9;
+            this.labelConnected.Text = "Not Connected";
             // 
-            // listBox1
+            // listBoxCommands
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(231, 56);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(177, 251);
-            this.listBox1.TabIndex = 10;
+            this.listBoxCommands.FormattingEnabled = true;
+            this.listBoxCommands.Location = new System.Drawing.Point(231, 56);
+            this.listBoxCommands.Name = "listBoxCommands";
+            this.listBoxCommands.Size = new System.Drawing.Size(177, 251);
+            this.listBoxCommands.TabIndex = 10;
             // 
             // timer1
             // 
@@ -156,17 +156,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(437, 360);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.listBoxCommands);
+            this.Controls.Add(this.labelConnected);
+            this.Controls.Add(this.btnDisconnect);
+            this.Controls.Add(this.labelXbox);
+            this.Controls.Add(this.labelAdress);
+            this.Controls.Add(this.textBoxAddress);
+            this.Controls.Add(this.btnConnect);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnLeft);
+            this.Controls.Add(this.btnRight);
+            this.Controls.Add(this.btnForward);
             this.Name = "Form1";
             this.Text = "BWC Client";
             this.ResumeLayout(false);
@@ -176,17 +176,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnRight;
+        private System.Windows.Forms.Button btnLeft;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.Label labelAdress;
+        private System.Windows.Forms.Label labelXbox;
+        private System.Windows.Forms.Button btnDisconnect;
+        private System.Windows.Forms.Label labelConnected;
+        private System.Windows.Forms.ListBox listBoxCommands;
         private System.Windows.Forms.Timer timer1;
     }
 }

@@ -26,29 +26,31 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            listBox1.DataSource = list;
+            listBoxCommands.DataSource = list;
             timer1.Start();
         }
         
-        private void button5_Click(object sender, EventArgs e)
+       //initializes the server
+        private void btnConnect_Click(object sender, EventArgs e)
         {
             if (!connected)
             {
-                client = new WebSocket(textBox1.Text);
-
+                client = new WebSocket(textBoxAddress.Text);
                 client.OnOpen += (sender2, e2) =>
-                 connected = true;
-
+                    connected = true;
                 client.OnClose += (sender2, e2) =>
-                 connected = false;
+                    connected = false;
 
                 client.Connect();
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnDisconnect_Click(object sender, EventArgs e)
         {
-            if (connected) client.Close();
+            if (connected)
+            {
+                client.Close();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -57,102 +59,98 @@ namespace WindowsFormsApplication1
             
             if (gamePadState.IsConnected)
             {
-                label2.Text = "Controller is connected";
+                labelXbox.Text = "Controller is connected";
                
-                if (connected)
+                if (gamePadState.Buttons.A == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                 {
-                   
-                    if (gamePadState.Buttons.A == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-                    {
-                        Forward();
-                    }
-                    else if (gamePadState.Buttons.B == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-                    {
-                        Back();
-                    }
-                    else if (gamePadState.Buttons.LeftShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-                    {
-                        Left();
-                    }
-                    else if (gamePadState.Buttons.RightShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
-                    {
-                        Right();
-                    }
+                    Forward();
                 }
-                
-            }
-            else label2.Text = "Controller is not connected";
 
-            if (connected) label3.Text = "Connected";
-            else label3.Text = "Not Connected";
+                else if (gamePadState.Buttons.B == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+                    Back();
+                }
+
+                else if (gamePadState.Buttons.LeftShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+                    Left();
+                }
+
+                else if (gamePadState.Buttons.RightShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+                    Right();
+                }
+            }
+            else labelXbox.Text = "Controller is not connected";
+
+            if (connected) labelConnected.Text = "Connected";
+            else labelConnected.Text = "Not Connected";
             
             Thread.Sleep(100);
         }
         
-        void Forward()
+        void Send(String command)
         {
             if (connected)
             {
-                client.Send("forward");
-                list.Add("forward");
-                Refresh();
+                client.Send(command);
+                list.Add(command);
+                RefreshList();
             }
+        }
+
+        void Forward()
+        {
+            Send("forward");
         }
 
         void Left()
         {
-            if (connected)
-            {
-                client.Send("left");
-                list.Add("left");
-                Refresh();
-            }
+            Send("left");
         }
 
         void Right()
         {
-            if (connected)
-            {
-                client.Send("right");
-                list.Add("right");
-                Refresh();
-            }
+            Send("right");
         }
 
         void Back()
         {
-            if (connected)
-            {
-                client.Send("back");
-                list.Add("back");
-                Refresh();
-            }
+            Send("back");
         }
 
-        void Refresh()
+        void RefreshList()
         {
-            listBox1.DataSource = null;
-            listBox1.DataSource = list;
+            listBoxCommands.DataSource = null;
+            listBoxCommands.DataSource = list;
+            int visibleItems = listBoxCommands.ClientSize.Height / listBoxCommands.ItemHeight;
+            listBoxCommands.TopIndex = Math.Max(listBoxCommands.Items.Count - visibleItems + 1, 0);
         }
 
-        private void button1_MouseDown(object sender, MouseEventArgs e)
+        private void btnForward_MouseDown(object sender, MouseEventArgs e)
         {
             Forward();
         }
 
-        private void button3_MouseDown(object sender, MouseEventArgs e)
+        private void btnLeft_MouseDown(object sender, MouseEventArgs e)
         {
             Left();
         }
 
-        private void button2_MouseDown(object sender, MouseEventArgs e)
+        private void btnRight_MouseDown(object sender, MouseEventArgs e)
         {
             Right();
         }
 
-        private void button4_MouseDown(object sender, MouseEventArgs e)
+        private void btnBack_MouseDown(object sender, MouseEventArgs e)
         {
             Back();
         }
+
+
+
+
+
+        
     }
 }
