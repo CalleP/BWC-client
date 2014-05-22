@@ -18,23 +18,18 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
 
-
         private bool connected = false;
-
         private List<string> list = new List<string>();
+        
         private WebSocket client;
+        
         public Form1()
         {
-
-
             InitializeComponent();
             listBox1.DataSource = list;
             timer1.Start();
-            
-
         }
-
-
+        
         private void button5_Click(object sender, EventArgs e)
         {
             if (!connected)
@@ -49,23 +44,15 @@ namespace WindowsFormsApplication1
 
                 client.Connect();
             }
-
-
-
-            
-            
-
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             if (connected) client.Close();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
             
             if (gamePadState.IsConnected)
@@ -78,7 +65,6 @@ namespace WindowsFormsApplication1
                     if (gamePadState.Buttons.A == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                     {
                         Forward();
-                        
                     }
                     else if (gamePadState.Buttons.B == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                     {
@@ -87,7 +73,6 @@ namespace WindowsFormsApplication1
                     else if (gamePadState.Buttons.LeftShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                     {
                         Left();
-
                     }
                     else if (gamePadState.Buttons.RightShoulder == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                     {
@@ -100,10 +85,10 @@ namespace WindowsFormsApplication1
 
             if (connected) label3.Text = "Connected";
             else label3.Text = "Not Connected";
-            Thread.Sleep(100);
             
+            Thread.Sleep(100);
         }
-
+        
         void Forward()
         {
             if (connected)
@@ -144,27 +129,20 @@ namespace WindowsFormsApplication1
             }
         }
 
-
         void Refresh()
         {
             listBox1.DataSource = null;
             listBox1.DataSource = list;
         }
 
-
-
-
-
         private void button1_MouseDown(object sender, MouseEventArgs e)
         {
             Forward();
-            
         }
 
         private void button3_MouseDown(object sender, MouseEventArgs e)
         {
             Left();
-
         }
 
         private void button2_MouseDown(object sender, MouseEventArgs e)
@@ -176,7 +154,5 @@ namespace WindowsFormsApplication1
         {
             Back();
         }
-
-
     }
 }
