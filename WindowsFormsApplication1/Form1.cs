@@ -20,7 +20,6 @@ namespace WindowsFormsApplication1
 
         private bool connected = false;
         private List<string> list = new List<string>();
-
         private List<string> Recievedlist = new List<string>();
 
         private WebSocket client;
@@ -30,10 +29,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             listBoxCommands.DataSource = list;
             timer1.Start();
-
-
-
-
         }
         
        //initializes the server
@@ -92,15 +87,13 @@ namespace WindowsFormsApplication1
                 else if (gamePadState.Buttons.X == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
                 {
                     Sonar();
-                    
                 }
             }
+            
             else labelXbox.Text = "Controller is not connected";
-
+            
             if (connected) labelConnected.Text = "Connected";
             else labelConnected.Text = "Not Connected";
-            
-            Thread.Sleep(100);
         }
         
         void Send(String command)
@@ -136,7 +129,6 @@ namespace WindowsFormsApplication1
         void Sonar()
         {
             Send("GetSonar");
-  
         }
 
         void RefreshList()
@@ -176,9 +168,5 @@ namespace WindowsFormsApplication1
         {
             Sonar();
         }
-
-       
-
-        
     }
 }
