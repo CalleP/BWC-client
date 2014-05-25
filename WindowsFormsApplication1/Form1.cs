@@ -20,7 +20,9 @@ namespace WindowsFormsApplication1
 
         private bool connected = false;
         private List<string> list = new List<string>();
-        
+
+        private List<string> Recievedlist = new List<string>();
+
         private WebSocket client;
         
         public Form1()
@@ -28,6 +30,10 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             listBoxCommands.DataSource = list;
             timer1.Start();
+
+
+
+
         }
         
        //initializes the server
@@ -40,6 +46,8 @@ namespace WindowsFormsApplication1
                     connected = true;
                 client.OnClose += (sender2, e2) =>
                     connected = false;
+                client.OnMessage += (sender2, e2) =>
+                    Recievedlist.Add(e2.Data);
 
                 client.Connect();
             }
@@ -80,6 +88,12 @@ namespace WindowsFormsApplication1
                 {
                     Right();
                 }
+
+                else if (gamePadState.Buttons.X == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+                {
+                    Sonar();
+                    
+                }
             }
             else labelXbox.Text = "Controller is not connected";
 
@@ -119,12 +133,23 @@ namespace WindowsFormsApplication1
             Send("back");
         }
 
+        void Sonar()
+        {
+            Send("GetSonar");
+  
+        }
+
         void RefreshList()
         {
+            listBoxRecieved.DataSource = null;
+            listBoxRecieved.DataSource = Recievedlist;
+            int visibleItems = listBoxRecieved.ClientSize.Height / listBoxRecieved.ItemHeight;
+            listBoxRecieved.TopIndex = Math.Max(listBoxRecieved.Items.Count - visibleItems + 1, 0);
+
             listBoxCommands.DataSource = null;
             listBoxCommands.DataSource = list;
-            int visibleItems = listBoxCommands.ClientSize.Height / listBoxCommands.ItemHeight;
-            listBoxCommands.TopIndex = Math.Max(listBoxCommands.Items.Count - visibleItems + 1, 0);
+            int visibleItems2 = listBoxCommands.ClientSize.Height / listBoxCommands.ItemHeight;
+            listBoxCommands.TopIndex = Math.Max(listBoxCommands.Items.Count - visibleItems2 + 1, 0);
         }
 
         private void btnForward_MouseDown(object sender, MouseEventArgs e)
@@ -147,9 +172,12 @@ namespace WindowsFormsApplication1
             Back();
         }
 
+        private void btnSonar_Click(object sender, EventArgs e)
+        {
+            Sonar();
+        }
 
-
-
+       
 
         
     }

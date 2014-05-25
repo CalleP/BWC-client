@@ -41,6 +41,10 @@
             this.labelConnected = new System.Windows.Forms.Label();
             this.listBoxCommands = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSonar = new System.Windows.Forms.Button();
+            this.listBoxRecieved = new System.Windows.Forms.ListBox();
+            this.labelSent = new System.Windows.Forms.Label();
+            this.labelReceived = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnForward
@@ -100,7 +104,7 @@
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(165, 20);
             this.textBoxAddress.TabIndex = 5;
-            this.textBoxAddress.Text = "ws://127.0.0.1:50007";
+            this.textBoxAddress.Text = "ws://127.0.0.1:80/Simulator";
             // 
             // labelAdress
             // 
@@ -114,7 +118,7 @@
             // labelXbox
             // 
             this.labelXbox.AutoSize = true;
-            this.labelXbox.Location = new System.Drawing.Point(228, 29);
+            this.labelXbox.Location = new System.Drawing.Point(57, 56);
             this.labelXbox.Name = "labelXbox";
             this.labelXbox.Size = new System.Drawing.Size(123, 13);
             this.labelXbox.TabIndex = 7;
@@ -151,11 +155,51 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnSonar
+            // 
+            this.btnSonar.Location = new System.Drawing.Point(84, 270);
+            this.btnSonar.Name = "btnSonar";
+            this.btnSonar.Size = new System.Drawing.Size(75, 23);
+            this.btnSonar.TabIndex = 11;
+            this.btnSonar.Text = "Sonar";
+            this.btnSonar.UseVisualStyleBackColor = true;
+            this.btnSonar.Click += new System.EventHandler(this.btnSonar_Click);
+            // 
+            // listBoxRecieved
+            // 
+            this.listBoxRecieved.FormattingEnabled = true;
+            this.listBoxRecieved.Location = new System.Drawing.Point(426, 56);
+            this.listBoxRecieved.Name = "listBoxRecieved";
+            this.listBoxRecieved.Size = new System.Drawing.Size(160, 251);
+            this.listBoxRecieved.TabIndex = 12;
+            // 
+            // labelSent
+            // 
+            this.labelSent.AutoSize = true;
+            this.labelSent.Location = new System.Drawing.Point(228, 40);
+            this.labelSent.Name = "labelSent";
+            this.labelSent.Size = new System.Drawing.Size(29, 13);
+            this.labelSent.TabIndex = 13;
+            this.labelSent.Text = "Sent";
+            // 
+            // labelReceived
+            // 
+            this.labelReceived.AutoSize = true;
+            this.labelReceived.Location = new System.Drawing.Point(426, 37);
+            this.labelReceived.Name = "labelReceived";
+            this.labelReceived.Size = new System.Drawing.Size(53, 13);
+            this.labelReceived.TabIndex = 14;
+            this.labelReceived.Text = "Received";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 360);
+            this.ClientSize = new System.Drawing.Size(621, 360);
+            this.Controls.Add(this.labelReceived);
+            this.Controls.Add(this.labelSent);
+            this.Controls.Add(this.listBoxRecieved);
+            this.Controls.Add(this.btnSonar);
             this.Controls.Add(this.listBoxCommands);
             this.Controls.Add(this.labelConnected);
             this.Controls.Add(this.btnDisconnect);
@@ -188,6 +232,10 @@
         private System.Windows.Forms.Label labelConnected;
         private System.Windows.Forms.ListBox listBoxCommands;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnSonar;
+        private System.Windows.Forms.ListBox listBoxRecieved;
+        private System.Windows.Forms.Label labelSent;
+        private System.Windows.Forms.Label labelReceived;
     }
 }
 
