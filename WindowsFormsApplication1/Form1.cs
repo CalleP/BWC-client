@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
         private bool connected = false;
         private List<string> list = new List<string>();
         private List<string> Recievedlist = new List<string>();
+        private ErrorEventArgs errorEvent;
 
         private WebSocket client;
         
@@ -43,7 +44,10 @@ namespace WindowsFormsApplication1
                     connected = false;
                 client.OnMessage += (sender2, e2) =>
                     Recievedlist.Add(e2.Data);
+                client.OnError += (sender2, e2) =>
+                    MessageBox.Show(((ErrorEventArgs)e2).Message);
 
+                
                 client.Connect();
             }
         }
