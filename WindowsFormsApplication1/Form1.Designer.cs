@@ -104,7 +104,7 @@
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(165, 20);
             this.textBoxAddress.TabIndex = 5;
-            this.textBoxAddress.Text = "ws://127.0.0.1:80/Simulator";
+            this.textBoxAddress.Text = "ws://127.0.0.1:50007/Simulator";
             // 
             // labelAdress
             // 
